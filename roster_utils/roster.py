@@ -2,10 +2,15 @@ from parseplayers import parse_player_functions
 import re
 from asciify import asciify
 
-# league = 'appy'
-# league = 'milb_aa_eastern'
-league = 'mlb'
+league = 'appy'
+# league = 'milb'
+# league = 'mlb'
 # league = 'necbl'
+
+if league == 'milb':
+	division = 'milb_aa_eastern'
+else:
+	division = league
 
 import urllib2, datetime, re
 from bs4 import BeautifulSoup
@@ -135,9 +140,9 @@ parse_player = parse_player_functions[league]
 unknown_jersey = {'cur':101}
 players = []
 
-for team in teams[league]:
+for team in teams[division]:
 	# print team
-	location = teams[league][team]
+	location = teams[division][team]
 	url = urls[league].format(location)
 
 	soup = get_soup(url)
@@ -204,7 +209,7 @@ rowtemp = ','.join(rowtemp)
 header += '\n'
 rowtemp += '\n'
 
-with open('../rosters/{}.csv.js'.format(league), 'w') as jsfile, open('../rosters/{}.csv'.format(league), 'w') as csvfile:
+with open('../rosters/{}.csv.js'.format(division), 'w') as jsfile, open('../rosters/{}.csv'.format(division), 'w') as csvfile:
 	jsfile.write('var roster_csv = `\n')
 	jsfile.write(header)
 	csvfile.write(header)
