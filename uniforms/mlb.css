@@ -1,0 +1,86 @@
+svg {
+	vertical-align: top;
+	zoom: 125%;
+}
+
+polygon.away, circle.away {
+	stroke: black;
+}
+
+polygon.home, circle.home {
+	stroke: black;
+}
+text {
+	font-weight: bold;
+}
+/*text.away {
+	fill: white;
+}
+*/
+text.BAL.home, polygon.BAL.away, circle.BAL.away {fill: #fd4b01}
+text.BOS.home, polygon.BOS.away, circle.BOS.away {fill: #c7112f}
+text.NYY.home, polygon.NYY.away, circle.NYY.away {fill: #e40227}
+text.TBR.home, polygon.TBR.away, circle.TBR.away {fill: #001a4d}
+text.TOR.home, polygon.TOR.away, circle.TOR.away {fill: #0c488e}
+text.CWS.home, polygon.CWS.away, circle.CWS.away {fill: #000000}
+text.CLE.home, polygon.CLE.away, circle.CLE.away {fill: #ec0027}
+text.DET.home, polygon.DET.away, circle.DET.away {fill: #0c2c56}
+text.KCR.home, polygon.KCR.away, circle.KCR.away {fill: #012d72}
+text.MIN.home, polygon.MIN.away, circle.MIN.away {fill: #012d72} /*#d31146*/
+/*text.HOU.home, polygon.HOU.away, circle.HOU.away {fill: #002d62} /*#ea6e20*/
+polygon.LAA.home, circle.LAA.home {fill: white;}
+text.LAA.home, polygon.LAA.away, circle.LAA.away {fill: #cd0f41} /*#003263*/ 
+text.OAK.home, polygon.OAK.away, circle.OAK.away {fill: #003831} /*#efb21f*/
+text.SEA.home, polygon.SEA.away, circle.SEA.away {fill: #002c56} /*#005c5c*/
+text.TEX.home, polygon.TEX.away, circle.TEX.away {fill: #bf121f} /*#003278*/
+/*text.ATL.home, polygon.ATL.away, circle.ATL.away {fill: #bb2130} /*#0d233f*/*/
+text.MIA.home, polygon.MIA.away, circle.MIA.away {fill: #00a3e0} /*#ee343f*/
+/*text.NYM.home, polygon.NYM.away, circle.NYM.away {fill: #f27938} /*#004784*/*/
+/*text.PHI.home, polygon.PHI.away, circle.PHI.away {fill: #ba0d2f} /*#012d72*/*/
+text.WSH.home, polygon.WSH.away, circle.WSH.away {fill: #ac0100} /*#0b214a*/
+text.CHC.home, polygon.CHC.away, circle.CHC.away {fill: #c7112f} /*#012e6c*/
+text.CIN.home, polygon.CIN.away, circle.CIN.away {fill: #ba0d2f}
+text.MIL.home, polygon.MIL.away, circle.MIL.away {fill: #11284a} /*#fec52e*/
+/*text.PIT.home, polygon.PIT.away, circle.PIT.away {fill: #feb827}*/
+text.STL.home, polygon.STL.away, circle.STL.away {fill: #b62227} /*#fee70d*/
+text.ARI.home, polygon.ARI.away, circle.ARI.away {fill: #a5192e} /*#d9c89d*/
+text.COL.home, polygon.COL.away, circle.COL.away {fill: #8e9093}
+text.LAD.home, polygon.LAD.away, circle.LAD.away {fill: #012e6c} /*#e4022b*/
+text.SDP.home, polygon.SDP.away, circle.SDP.away {fill: #3e342f}
+text.SFG.home, polygon.SFG.away, circle.SFG.away {fill: #f3793d} /*#c49d6e*/
+
+text.HOU.home, polygon.HOU.away, circle.HOU.away {fill: #002d62} /*#ea6e20*/
+
+text {
+	stroke-width: 0.3px;
+}
+/*polygon.NYM.away, circle.NYM.away {
+	fill: lightgray;
+	stroke: #f27938;
+} 
+text.NYM.away {
+	fill: #004784;
+}
+polygon.PHI.home, circle.PHI.home {
+	fill: white;
+	stroke: #012d72;
+} 
+text.PHI.home {
+	fill: #ba0d2f;
+}
+*/
+
+polygon.ATL.away, circle.ATL.away {
+	fill: #004784;
+} 
+text.ATL.away {
+	fill: #bb2130;
+	stroke: white;
+}
+polygon.PIT.home, circle.PIT.home {
+	fill: white;
+} 
+text.PIT.home {
+	fill: #feb827;
+	stroke: black;
+}
