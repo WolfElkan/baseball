@@ -2,6 +2,11 @@ body {
 	zoom: 110%;
 }
 
+iframe {
+	/*width: inherit;*/
+	/*border: none;*/
+}
+
 #scoreboard {
 	border: solid black 2px;
 	background-color: green;
@@ -204,8 +209,8 @@ body {
 	/*background-color: red;*/
 }
 
-svg {
-	/*border: solid black 1px;*/
+svg, #_lineup {
+	display: inline-block;
 }
 
 polygon.true {
