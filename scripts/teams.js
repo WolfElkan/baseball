@@ -1,0 +1,52 @@
+const all_leagues = {
+	'mlb': {
+		'CWS':['Chicago','White Sox'],
+		'CLE':['Cleveland','Guardians'],
+		'DET':['Detroit','Tigers'],
+		'KCR':['Kansas City','Royals'],
+		'MIN':['Minnesota','Twins'],
+		'BAL':['Baltimore','Orioles'],
+		'BOS':['Boston','Red Sox'],
+		'NYY':['New York','Yankees'],
+		'TBR':['Tampa Bay','Rays'],
+		'TOR':['Toronto','Blue Jays'],
+		'HOU':['Houston','Astros'],
+		'LAA':['Los Angeles','Angels'],
+		'OAK':['Oakland','Athletics'],
+		'SEA':['Seattle','Mariners'],
+		'TEX':['Texas','Rangers'],
+		'CHC':['Chicago','Cubs'],
+		'CIN':['Cincinnati','Reds'],
+		'MIL':['Milwaukee','Brewers'],
+		'PIT':['Pittsburgh','Pirates'],
+		'STL':['St. Louis','Cardinals'],
+		'ATL':['Atlanta','Braves'],
+		'MIA':['Miami','Marlins'],
+		'NYM':['New York','Mets'],
+		'PHI':['Philadelphia','Phillies'],
+		'WSH':['Washington','Nationals'],
+		'ARI':['Arizona','Diamondbacks'],
+		'COL':['Colorado','Rockies'],
+		'LAD':['Los Angeles','Dodgers'],
+		'SDP':['San Diego','Padres'],
+		'SFG':['San Francisco','Giants'],
+	},
+	'milb':{
+		'aa':{
+			'eastern':{
+				'AK':['Akron','RubberDucks'],
+				'AT':['Altoona','Curve'],
+				'BN':['Binghamton','Rumble Ponies'],
+				'BW':['Bowie','Baysox'],
+				'ER':['Erie','SeaWolves'],
+				'HR':['Harrisburg','Senators'],
+				'HF':['Hartford','Yard Goats'],
+				'NH':['New Hampshire','Fisher Cats'],
+				'PT':['Portland','Sea Dogs'],
+				'RD':['Reading','Fightin Phils'],
+				'RM':['Richmond','Flying Squirrels'],
+				'SO':['Somerset','Patriots'],
+			}
+		}
+	}
+}

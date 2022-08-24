@@ -2,50 +2,26 @@
 <html>
 <head>
 	<title>Baseball Scoreboard</title>
-	<script type="text/javascript" src="../jQuery/external/jquery/jquery.js"></script>
+	<script type="text/javascript" src="../../jQuery/external/jquery/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="../uniforms/milb_aa_eastern.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="../scripts/teams.js"></script>
 	<script type="text/javascript">
-		league = {
-			'AK':['Akron','RubberDucks'],
-			'AT':['Altoona','Curve'],
-			'BN':['Binghamton','Rumble Ponies'],
-			'BW':['Bowie','Baysox'],
-			'ER':['Erie','SeaWolves'],
-			'HR':['Harrisburg','Senators'],
-			'HF':['Hartford','Yard Goats'],
-			'NH':['New Hampshire','Fisher Cats'],
-			'PT':['Portland','Sea Dogs'],
-			'RD':['Reading','Fightin Phils'],
-			'RM':['Richmond','Flying Squirrels'],
-			'SO':['Somerset','Patriots'],
-		}
+		league = all_leagues.milb.aa.eastern
 	</script>
-	<script type="text/javascript" src="get.js"></script>
-	<script type="text/javascript" src="Rosters/milb.csv.js"></script>
-	<script type="text/javascript" src="roster.js"></script>
-	<script type="text/javascript" src="game4.js"></script>
-	<script type="text/javascript" src="script.js"></script>
-	<script type="text/javascript" src="logos.js"></script>
-	<style type="text/css">
-		.AK {}
-		.AT {}
-		.BN {}
-		.BW {}
-		.ER {}
-		.HR {}
-		.HF {}
-		.NH {}
-		.PT {}
-		.RD {}
-		.RM {}
-		.SO {}
-	</style>
+	<script type="text/javascript" src="../scripts/get.js"></script>
+	<script type="text/javascript" src="../scripts/strftime.js"></script>
+	<script type="text/javascript" src="../rosters/milb_aa_eastern.csv.js"></script>
+	<script type="text/javascript" src="../scripts/roster.js"></script>
+	<script type="text/javascript" src="../scripts/game.js"></script>
+	<script type="text/javascript" src="../scripts/render.js"></script>
+	<script type="text/javascript" src="../scripts/logos.js"></script>
 </head>
 <body>
 	<center>
 	<div id="scoreboard">
 		<div id="counters">
-			<div id="bases">
+<!-- 			<div id="bases">
 				<div class="circles">
 					<table>
 						<tr>
@@ -65,7 +41,7 @@
 						</tr>
 					</table>
 				</div>
-			</div>
+			</div> -->
 			<div id="balls">
 				<div>Balls</div>
 				<div class="circles">
@@ -98,12 +74,16 @@
 			</thead>
 			<tr class="away">
 				<td class="away teamlogo">
+					<!-- &#x1f34e; -->
+					<!-- <img src="logos/NECBL/necbl_com/Valley.png"> -->
 					<!-- AWAY -->
 				</td>
 				<td class="current_inning"></td>
 			</tr>
 			<tr class="home">
 				<td class="home teamlogo">
+					<!-- &#x1f34a; -->
+					<!-- <img src="logos/NECBL/necbl_com/Keene.png"> -->
 					<!-- HOME -->
 				</td>
 				<td></td>
@@ -129,41 +109,10 @@
 			</tr>
 		</table><br>
 		<span class="arrow">&gt;</span><span class="inning">0</span>
+		<span class="white">P:</span>
+		<span class="pitchcount"></span>
 	</div>
 	</center>
-	<div class="controls">
-		<table id="diamond">
-			<tr>
-				<td><button class="a2" id="a2">&#x2199;</button></td>
-				<td class="base" class="b2" id="b2">2</td>
-				<td><button class="a1" id="a1">&#x2196;</button></td>
-			</tr>
-			<tr>
-				<td class="base" class="b3" id="b3">3</td>
-				<td></td>
-				<td class="base" class="b1" id="b1">1</td>
-			</tr>
-			<tr>
-				<td><button class="a3" id="a3">&#x2198;</button></td>
-				<td class="base">&#x2302;</td>
-				<td><button class="a0" id="a0">&#x2197;</button></td>
-			</tr>
-		</table>
-
-		<button id="ball">Ball</button>
-		<button id="strike">Strike</button>
-		<button id="foul">Foul</button>
-		<button id="bout">Batter Out</button>
-		<button id="out">Out</button>
-		<br>
-		<button id="single">Standard Single</button>
-		<button id="double">Standard Double</button>
-		<button id="triple">Standard Triple</button>
-		<button id="homerun">Home Run</button>
-		<br>
-		<button id="error">Error</button>
-	</div>
-	<br>
 	<div>
 		<button id="fullscreen">Fullscreen</button>
 		<input id="keys" type="text" name="keys">
@@ -176,6 +125,15 @@
 				<th class="away teamname"></th>
 				<th class="home teamname"></th>
 			</thead>
+			<tr class="pitchers">
+				<td>P</td>
+				<td class="away_P">
+					<select class="away-pitcher" name="away_P_num" id="away_P_num" disabled></select>
+				</td>
+				<td class="home_P">
+					<select class="home-pitcher" name="home_P_num" id="home_P_num" disabled></select>
+				</td>
+			</tr>
 			<tr>
 				<td>1</td>
 				<td class="away_1">
@@ -278,26 +236,57 @@
 		</table>
 		<button id="submitroster">Submit</button>
 	</div>
-	<div class="field">
-		<div class="fieldrow">
-			<div class="fieldpos LF">LF</div>
-			<div class="fieldpos CF">CF</div>
-			<div class="fieldpos RF">RF</div>
-		</div>
-		<div class="fieldrow">
-			<div class="fieldpos SS">SS</div>
-			<div class="fieldpos 2B">2B</div>
-		</div>
-		<div class="fieldrow">
-			<div class="fieldpos 3B">3B</div>
-			<div class="fieldpos P">P</div>
-			<div class="fieldpos 1B">1B</div>
-		</div>
-		<div class="fieldrow">
-			<div class="fieldpos C">C</div>
-		</div>
-	</div>
-	
+	<svg height="222" width="200">
+		<circle cx="100" cy="130" r="130" fill="green"></circle>
+		<circle cx="100" cy="130" r="80" fill="tan"></circle>
+		<polygon points="100,180, 150,130 100,80 50,130" fill="green"></polygon>
+		<polygon points="0,100 100,200 200,100 200,280 0,280" fill="green"></polygon>
+		<polygon points="0,130 100,230 200,130 200,280 0,280" fill="white"></polygon>
+		<polygon points="0,130 100,230 200,130 200,280 0,280" fill="white"></polygon>
+		<circle cx="100" cy="187" r="20" fill="tan"></circle>
+
+		<circle cx="100" cy="130" r="10" class="of P">P</circle>
+		<text x="100" y="130" class="of P"></text>
+
+		<circle cx="100" cy="210" r="10" class="of C">C</circle>
+		<text x="100" y="210" class="of C"></text>
+
+		<circle cx="150" cy="100" r="10" class="of 1B">1B</circle>
+		<text x="150" y="100" class="of 1B"></text>
+
+		<circle cx="130" cy="80" r="10" class="of 2B">2B</circle>
+		<text x="130" y="80" class="of 2B"></text>
+
+		<circle cx="70" cy="80" r="10" class="of SS">SS</circle>
+		<text x="70" y="80" class="of SS"></text>
+
+		<circle cx="50" cy="100" r="10" class="of 3B">3B</circle>
+		<text x="50" y="100" class="of 3B"></text>
+
+		<circle cx="37" cy="46" r="10" class="of LF">LF</circle>
+		<text x="37" y="46" class="of LF"></text>
+
+		<circle cx="100" cy="25" r="10" class="of CF">CF</circle>
+		<text x="100" y="25" class="of CF"></text>
+
+		<circle cx="163" cy="46" r="10" class="of RF">RF</circle>
+		<text x="163" y="46" class="of RF"></text>		
+
+		<polygon points="110,190 100,200 90,190 90,177 110,177" fill="white" class="if H"></polygon>
+		<text x="100" y="185" class="if H"></text>
+
+		<polygon points="147,130 160,143 173,130 160,117" fill="white" class="if B1"></polygon>
+		<text x="160" y="130" class="if B1"></text>
+		
+		<polygon points="87, 70 100, 83 113, 70 100, 57" fill="white" class="if B2"></polygon>
+		<text x="100" y="70" class="if B2"></text>
+
+		<polygon points="27,130  40,143  53,130  40,117" fill="white" class="if B3"></polygon>
+		<text x="40" y="130" class="if B3"></text>
+		
+	</svg>
+	<br>
+	<span class="yyyymmdd">00000000</span>_<span class="away_abbr">AWAY</span>_<span class="home_abbr">HOME</span>.baseball
 
 </body>
 </html>

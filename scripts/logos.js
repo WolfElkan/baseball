@@ -81,12 +81,12 @@ $(document).ready(function() {
 	$('.away .teamcolor').addClass(AWAY.abbr)
 	$('.home .teamcolor').addClass(HOME.abbr)
 	if (src = index(GET.away)) {
-		$('.away.teamlogo').html(`<img src="${src}">`)
+		$('.away.teamlogo').html(`<img src="../${src}">`)
 	} else {
 		$('.away.teamlogo').text(AWAY.abbr)
 	}
 	if (src = index(GET.home)) {
-		$('.home.teamlogo').html(`<img src="${src}">`)
+		$('.home.teamlogo').html(`<img src="../${src}">`)
 	} else {
 		$('.home.teamlogo').text(HOME.abbr)
 	}

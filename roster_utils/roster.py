@@ -3,7 +3,7 @@ import re
 from asciify import asciify
 
 # league = 'appy'
-# league = 'milb'
+# league = 'milb_aa_eastern'
 league = 'mlb'
 # league = 'necbl'
 
@@ -49,7 +49,7 @@ teams = {
 		'JCY':'johnson-city',
 		'KNG':'kingsport',
 	},
-	'milb': { # AA East
+	'milb_aa_eastern': {
 		'AK':'akron',
 		'AT':'altoona',
 		'BN':'binghamton',
@@ -204,7 +204,7 @@ rowtemp = ','.join(rowtemp)
 header += '\n'
 rowtemp += '\n'
 
-with open('Rosters/{}.csv.js'.format(league), 'w') as file:
+with open('../rosters/{}.csv.js'.format(league), 'w') as file:
 	file.write('var roster_csv = `\n')
 	file.write(header)
 	for player in players:

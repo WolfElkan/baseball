@@ -2,82 +2,20 @@
 <html>
 <head>
 	<title>Baseball Scoreboard</title>
-	<script type="text/javascript" src="../jQuery/external/jquery/jquery.js"></script>
-	<link rel="stylesheet" type="text/css" href="UniformStyles/mlb.css">
+	<script type="text/javascript" src="../../jQuery/external/jquery/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="../uniforms/mlb.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="../scripts/teams.js"></script>
 	<script type="text/javascript">
-		league = {
-			'CWS':['Chicago','White Sox'],
-			'CLE':['Cleveland','Guardians'],
-			'DET':['Detroit','Tigers'],
-			'KCR':['Kansas City','Royals'],
-			'MIN':['Minnesota','Twins'],
-			'BAL':['Baltimore','Orioles'],
-			'BOS':['Boston','Red Sox'],
-			'NYY':['New York','Yankees'],
-			'TBR':['Tampa Bay','Rays'],
-			'TOR':['Toronto','Blue Jays'],
-			'HOU':['Houston','Astros'],
-			'LAA':['Los Angeles','Angels'],
-			'OAK':['Oakland','Athletics'],
-			'SEA':['Seattle','Mariners'],
-			'TEX':['Texas','Rangers'],
-			'CHC':['Chicago','Cubs'],
-			'CIN':['Cincinnati','Reds'],
-			'MIL':['Milwaukee','Brewers'],
-			'PIT':['Pittsburgh','Pirates'],
-			'STL':['St. Louis','Cardinals'],
-			'ATL':['Atlanta','Braves'],
-			'MIA':['Miami','Marlins'],
-			'NYM':['New York','Mets'],
-			'PHI':['Philadelphia','Phillies'],
-			'WSH':['Washington','Nationals'],
-			'ARI':['Arizona','Diamondbacks'],
-			'COL':['Colorado','Rockies'],
-			'LAD':['Los Angeles','Dodgers'],
-			'SDP':['San Diego','Padres'],
-			'SFG':['San Francisco','Giants'],
-		}
+		var league = all_leagues.mlb
 	</script>
-	<script type="text/javascript" src="get.js"></script>
-	<script type="text/javascript" src="strftime.js"></script>
-	<script type="text/javascript" src="Rosters/mlb.csv.js"></script>
-	<script type="text/javascript" src="roster.js"></script>
-	<script type="text/javascript" src="game4.js"></script>
-	<script type="text/javascript" src="script.js"></script>
-	<script type="text/javascript" src="logos.js"></script>
-	<style type="text/css">
-		.CWS {}
-		.CLE {}
-		.DET {}
-		.KCR {}
-		.MIN {}
-		.BAL {}
-		.BOS {}
-		.NYY {}
-		.TBR {}
-		.TOR {}
-		.HOU {}
-		.LAA {}
-		.OAK {}
-		.SEA {}
-		.TEX {}
-		.CHC {}
-		.CIN {}
-		.MIL {}
-		.PIT {}
-		.STL {}
-		.ATL {}
-		.MIA {}
-		.NYM {}
-		.PHI {}
-		.WSH {}
-		.ARI {}
-		.COL {}
-		.LAD {}
-		.SDP {}
-		.SFG {}
-	</style>
+	<script type="text/javascript" src="../scripts/get.js"></script>
+	<script type="text/javascript" src="../scripts/strftime.js"></script>
+	<script type="text/javascript" src="../rosters/mlb.csv.js"></script>
+	<script type="text/javascript" src="../scripts/roster.js"></script>
+	<script type="text/javascript" src="../scripts/game.js"></script>
+	<script type="text/javascript" src="../scripts/render.js"></script>
+	<script type="text/javascript" src="../scripts/logos.js"></script>
 </head>
 <body>
 	<center>
@@ -175,39 +113,6 @@
 		<span class="pitchcount"></span>
 	</div>
 	</center>
-	<div class="controls">
-		<table id="diamond">
-			<tr>
-				<td><button class="a2" id="a2">&#x2199;</button></td>
-				<td class="base" class="b2" id="b2">2</td>
-				<td><button class="a1" id="a1">&#x2196;</button></td>
-			</tr>
-			<tr>
-				<td class="base" class="b3" id="b3">3</td>
-				<td></td>
-				<td class="base" class="b1" id="b1">1</td>
-			</tr>
-			<tr>
-				<td><button class="a3" id="a3">&#x2198;</button></td>
-				<td class="base">&#x2302;</td>
-				<td><button class="a0" id="a0">&#x2197;</button></td>
-			</tr>
-		</table>
-
-		<button id="ball">Ball</button>
-		<button id="strike">Strike</button>
-		<button id="foul">Foul</button>
-		<button id="bout">Batter Out</button>
-		<button id="out">Out</button>
-		<br>
-		<button id="single">Standard Single</button>
-		<button id="double">Standard Double</button>
-		<button id="triple">Standard Triple</button>
-		<button id="homerun">Home Run</button>
-		<br>
-		<button id="error">Error</button>
-	</div>
-	<br>
 	<div>
 		<button id="fullscreen">Fullscreen</button>
 		<input id="keys" type="text" name="keys">
