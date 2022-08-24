@@ -204,9 +204,11 @@ rowtemp = ','.join(rowtemp)
 header += '\n'
 rowtemp += '\n'
 
-with open('../rosters/{}.csv.js'.format(league), 'w') as file:
-	file.write('var roster_csv = `\n')
-	file.write(header)
+with open('../rosters/{}.csv.js'.format(league), 'w') as jsfile, open('../rosters/{}.csv'.format(league), 'w') as csvfile:
+	jsfile.write('var roster_csv = `\n')
+	jsfile.write(header)
+	csvfile.write(header)
 	for player in players:
-		file.write(rowtemp.format(**player))
-	file.write('`')
+		jsfile.write(rowtemp.format(**player))
+		csvfile.write(rowtemp.format(**player))
+	jsfile.write('`')
