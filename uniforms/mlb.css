@@ -3,15 +3,16 @@ polygon.away, circle.away {
 }
 
 polygon.home, circle.home {
+	fill: white;
 	stroke: black;
 }
 text {
 	font-weight: bold;
 }
-/*text.away {
+text.away {
 	fill: white;
 }
-*/
+
 text.BAL.home, polygon.BAL.away, circle.BAL.away {fill: #fd4b01}
 text.BOS.home, polygon.BOS.away, circle.BOS.away {fill: #c7112f}
 text.NYY.home, polygon.NYY.away, circle.NYY.away {fill: #e40227}
