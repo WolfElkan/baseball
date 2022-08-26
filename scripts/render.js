@@ -86,11 +86,11 @@ function RENDER() {
 		$(`td.away_${batting_order.away}`).addClass('atbat')
 	}
 
-	defending_roster = roster[homein ? 'away' : 'home']
-	for (var i = 0; i < defending_roster.length; i++) {
-		if (defending_roster[i] && defending_roster[i].svg) {
-			position = defending_roster[i].position
-			defending_roster[i].svg(position)
+	defenders = lineup[homein ? 'away' : 'home']
+	for (var i = 0; i < defenders.length; i++) {
+		if (defenders[i] && defenders[i].svg) {
+			position = defenders[i].position
+			defenders[i].svg(position)
 		}
 	}
 

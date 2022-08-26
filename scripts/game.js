@@ -2,7 +2,7 @@ var NBASES, BALLS, STRIKES, OUTS, INNINGS, FOULS
 var balls, strikes, outs, runs, bases
 var score, hits, errors, pitches, pitcher, homein, inning, batting_order, lob
 
-// var roster = []
+// var lineup = []
 
 // House Rules, total number that exist
 NBASES = 3
@@ -61,16 +61,16 @@ function newGame() {
 	for (var i = 0; i < NBASES + 1; i++) {
 		bases.push(null)
 	}
-	bases[0] = roster.away[0]
+	bases[0] = lineup.away[0]
 
 	homein = false
 	inning = 1
 
-	// for (var i = 0; i < roster.away.length; i++) {
-	// 	roster.away[i].reset()
+	// for (var i = 0; i < lineup.away.length; i++) {
+	// 	lineup.away[i].reset()
 	// }
-	// for (var i = 0; i < roster.home.length; i++) {
-	// 	roster.home[i].reset()
+	// for (var i = 0; i < lineup.home.length; i++) {
+	// 	lineup.home[i].reset()
 	// }
 }
 
@@ -244,7 +244,7 @@ KeyBindings['0'] = new_pitcher
 
 function get_batter() {
 	let team = homein ? 'home' : 'away'
-	return roster[team][batting_order[team]-1]
+	return lineup[team][batting_order[team]-1]
 }
 
 function next_batter() {
@@ -339,7 +339,7 @@ function event(key) {
 }
 
 function j(team, order, jersey) {
-	roster[team][order-1].jersey = jersey
+	lineup[team][order-1].jersey = jersey
 }
 
 function homej(order, jersey) {

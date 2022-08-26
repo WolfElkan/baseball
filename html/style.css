@@ -231,3 +231,8 @@ svg text.of {
 tr.pitchers td {
 	text-align: right;
 }
+
+svg {
+	vertical-align: top;
+	zoom: 125%;
+}
