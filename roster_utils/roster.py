@@ -2,10 +2,11 @@ from parseplayers import parse_player_functions
 import re
 from asciify import asciify
 
-league = 'appy'
+# league = 'appy'
 # league = 'milb'
-# league = 'mlb'
+league = 'mlb'
 # league = 'necbl'
+# league = 'smb3'
 
 if league == 'milb':
 	division = 'milb_aa_eastern'
@@ -40,7 +41,8 @@ urls = {
 	'appy':'https://www.appyleague.com/{}/roster',
 	'milb':'https://www.milb.com/{}/roster',
 	'mlb':'https://www.mlb.com/{}/roster',
-	'necbl':'http://necbl.wttbaseball.pointstreak.com/team_roster.html?leagueid=204&seasonid=33205&teamid={}'
+	'necbl':'http://necbl.wttbaseball.pointstreak.com/team_roster.html?leagueid=204&seasonid=33205&teamid={}',
+	'smb3':'https://redundantrobot.com/super_mega_baseball/',
 }
 
 teams = {
@@ -133,7 +135,8 @@ teams = {
 		'VL':   6403,
 		'VT':   6405,
 		'WN':   6462,
-	}
+	},
+	'smb3':{0:None},
 
 }
 

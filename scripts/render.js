@@ -27,10 +27,12 @@ function RENDER() {
 			bases[i].svg('B'+i)
 		}
 	}
-	bases[0].svg('H')
-	$(`#bs0`).text(bases[0].jersey)
-	// $(`text.H`).text(bases[0].jersey)
-	render(bases[0])
+	if (bases[0].svg) {
+		bases[0].svg('H')
+		$(`#bs0`).text(bases[0].jersey)
+		// $(`text.H`).text(bases[0].jersey)
+		render(bases[0])
+	}
 
 	for (var i = 0; i < bases.length; i++) {
 		if (bases[i]) {

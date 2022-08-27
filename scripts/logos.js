@@ -1,5 +1,9 @@
 function type(obj) {
-	return obj.__proto__.constructor
+	if (obj && obj.__proto__ && obj.__proto__.constructor) {
+		return obj.__proto__.constructor
+	} else {
+		return obj
+	}
 }
 
 const colors = {

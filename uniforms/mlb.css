@@ -66,7 +66,7 @@ text.PHI.home {
 }
 */
 
-polygon.ATL.away, circle.ATL.away {
+/*polygon.ATL.away, circle.ATL.away {
 	fill: #004784;
 } 
 text.ATL.away {
@@ -79,4 +79,38 @@ polygon.PIT.home, circle.PIT.home {
 text.PIT.home {
 	fill: #feb827;
 	stroke: black;
+}*/
+
+* {
+	/*font-family: helvetica;*/
 }
+
+text.BAL.away {
+	fill: #fd4b01;
+	/*stroke: white;*/
+}
+polygon.BAL.away, circle.BAL.away {
+	fill: black;
+} 
+text.HOU.home {
+	fill: #002d62;
+	/*stroke: white;*/
+}
+polygon.HOU.home, circle.HOU.home {
+	fill: #ea6e20;
+} 
+
+text.CLE.away {
+	fill: #ec0027;
+	/*stroke: white;*/
+}
+polygon.CLE.away, circle.CLE.away {
+	fill: black;
+} 
+text.SEA.home {
+	fill: #002d62;
+	/*stroke: white;*/
+}
+polygon.SEA.home, circle.SEA.home {
+	fill: #1dd;
+} 

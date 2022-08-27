@@ -61,7 +61,7 @@ function newGame() {
 	for (var i = 0; i < NBASES + 1; i++) {
 		bases.push(null)
 	}
-	bases[0] = lineup.away[0]
+	bases[0] = lineup.away[1]
 
 	homein = false
 	inning = 1
@@ -234,23 +234,39 @@ KeyBindings['!'] = () => {baseout(1)}
 KeyBindings['@'] = () => {baseout(2)}
 KeyBindings['#'] = () => {baseout(3)}
 
-
+function get_pitcher(ha) {
+	if (ha === undefined) {
+		ha = homein ? 'away' : 'home'
+	}
+	return roster[ha].pitcher[pitcher[ha]].sp('P')
+}
 
 function new_pitcher() {
 	pitches[homein ? 'home' : 'away'] = 0
+}
+function next_pitcher() {
+	let ha = homein ? 'away' : 'home'
+	pitcher[ha]++
+	pitcher[ha] %= roster[ha].pitcher.length
+	let result = lineup[ha][0] = get_pitcher(ha)
+	$(`#${ha}_0_num`).val(result.jersey)
+	return result
+}
+KeyBindings['0'] = () => {
+	new_pitcher()
+	next_pitcher()
 	RENDER()
 }
-KeyBindings['0'] = new_pitcher
 
 function get_batter() {
-	let team = homein ? 'home' : 'away'
-	return lineup[team][batting_order[team]-1]
+	let ha = homein ? 'home' : 'away'
+	return lineup[ha][batting_order[ha]]
 }
 
 function next_batter() {
-	let team = homein ? 'home' : 'away'
-	batting_order[team] %= 9
-	batting_order[team] ++
+	let ha = homein ? 'home' : 'away'
+	batting_order[ha] %= 9
+	batting_order[ha] += 1
 	strikes = 0
 	balls = 0
 	return get_batter()
@@ -264,9 +280,9 @@ function next_inning() {
 	var go = true
 	var extend = false
 
-	var team = homein ? 'home' : 'away'
+	var ha = homein ? 'home' : 'away'
 
-	score[team][inning] = runs
+	score[ha][inning] = runs
 
 	if (inning >= INNINGS) {
 		if (homein && sum(score['home']) == sum(score['away'])) {
@@ -279,7 +295,7 @@ function next_inning() {
 
 	for (var i = 1; i <= 3; i++) {
 		if (bases[i]) {
-			lob[team]++
+			lob[ha]++
 		}
 	}
 
@@ -338,8 +354,8 @@ function event(key) {
 
 }
 
-function j(team, order, jersey) {
-	lineup[team][order-1].jersey = jersey
+function j(ha, order, jersey) {
+	lineup[ha][order].jersey = jersey
 }
 
 function homej(order, jersey) {
