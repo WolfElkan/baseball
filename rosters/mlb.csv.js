@@ -1,4 +1,4 @@
-var roster_csv = `
+const mlb_csv = `
 team,pos,dob,B/T,height,weight,first,middle,last,suffix,jersey
 CIN,P,1999-06-01,L/L,72,192,Andrew,,Abbott,,41
 WSH,I,2000-10-03,L/R,74,191,C,J,Abrams,,5

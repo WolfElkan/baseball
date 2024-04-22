@@ -6,13 +6,13 @@
 	<script type="text/javascript" src="../../scripts/jquery.js"></script>
 	<script type="text/javascript" src="../../scripts/get.js"></script>
 	
-	<script type="text/javascript" src="../../rosters/appy.csv.js"></script>
-	<link rel="stylesheet" type="text/css" href="../../uniforms/appy.css">
+	<script type="text/javascript" src="../../rosters/{{league}}.csv.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../uniforms/{{league}}.css">
 	
 	<link rel="stylesheet" type="text/css" href="../style.css">
 	<script type="text/javascript" src="../../scripts/teams.js"></script>
 	<script type="text/javascript">
-		var league = all_leagues.appy
+		var league = all_leagues.{{leaguedot}}
 		$(document).ready(() => {
 			$('#_scoreboard').html(scoreboard_html)
 			$('#_lineup').html(lineup_html)

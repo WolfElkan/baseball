@@ -10,7 +10,28 @@ update('html/components/scoreboard.html')
 update('html/components/lineup.html')
 update('html/components/diagram.html')
 
-# update('rosters/appy.csv')
-# update('rosters/milb_aa_eastern.csv')
-# update('rosters/mlb.csv')
-# update('rosters/necbl.csv')
+def specialize(league):
+	prefix = 'html/templates/'
+	with open(prefix + league + '.html', 'w') as wfile, open(prefix + 'standard.html', 'r') as rfile:
+		content = rfile.read()
+		content = content.replace('{{league}}',league)
+		leaguedot = league.replace('_','.')
+		content = content.replace('{{leaguedot}}',leaguedot)
+		wfile.write(content)
+
+leagues = [
+	'mlb',
+	'milb_aa_eastern',
+	'necbl',
+	'appy',
+]
+
+for league in leagues:
+	specialize(league)
+
+
+
+update('rosters/appy.csv')
+update('rosters/milb_aa_eastern.csv')
+update('rosters/mlb.csv')
+update('rosters/necbl.csv')
