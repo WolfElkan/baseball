@@ -236,3 +236,8 @@ svg {
 	vertical-align: top;
 	zoom: 125%;
 }
+
+#_diagram, #_scoreboard {
+	display: inline-block;
+}
+

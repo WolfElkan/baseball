@@ -33,6 +33,7 @@ text.TEX.home, polygon.TEX.away, circle.TEX.away {fill: #bf121f} /*#003278*/
 text.MIA.home, polygon.MIA.away, circle.MIA.away {fill: #00a3e0} /*#ee343f*/
 /*text.NYM.home, polygon.NYM.away, circle.NYM.away {fill: #f27938} /*#004784*/*/
 /*text.PHI.home, polygon.PHI.away, circle.PHI.away {fill: #ba0d2f} /*#012d72*/*/
+text.PHI.home, polygon.PHI.away, circle.PHI.away {fill: #012d72} /*#012d72*/
 text.WSH.home, polygon.WSH.away, circle.WSH.away {fill: #ac0100} /*#0b214a*/
 text.CHC.home, polygon.CHC.away, circle.CHC.away {fill: #c7112f} /*#012e6c*/
 text.CIN.home, polygon.CIN.away, circle.CIN.away {fill: #ba0d2f}
@@ -90,7 +91,7 @@ text.BAL.away {
 	/*stroke: white;*/
 }
 polygon.BAL.away, circle.BAL.away {
-	fill: black;
+	fill: darkgray;
 } 
 text.HOU.home {
 	fill: #002d62;
@@ -114,3 +115,4 @@ text.SEA.home {
 polygon.SEA.home, circle.SEA.home {
 	fill: #1dd;
 } 
+

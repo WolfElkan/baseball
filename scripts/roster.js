@@ -153,10 +153,12 @@ var lineup = {'away':[],'home':[]}
 
 for (var i = 0; i <= 9; i++) {
 	let a = new Player()
-	a.jersey = '#'+i
+	// a.jersey = '#'+i
+	a.jersey = '_'
 	lineup.away.push(a)
 	let h = new Player()
-	h.jersey = '#'+i
+	// h.jersey = '#'+i
+	h.jersey = '_'
 	lineup.home.push(h)
 }
 

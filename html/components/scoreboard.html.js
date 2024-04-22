@@ -1,7 +1,6 @@
 const scoreboard_html = `
 <div id="scoreboard">
 	<div id="counters">
-		<!-- 			
 		<div id="bases">
 			<div class="circles">
 				<table>
@@ -22,7 +21,7 @@ const scoreboard_html = `
 					</tr>
 				</table>
 			</div>
-		</div> -->
+		</div>
 		<div id="balls">
 			<div>Balls</div>
 			<div class="circles">
@@ -89,7 +88,11 @@ const scoreboard_html = `
 			<td class="lob">0</td>
 		</tr>
 	</table><br>
-	<span class="arrow">&gt;</span><span class="inning">0</span>
-	<span class="white">P:</span>
-	<span class="pitchcount"></span>
+	<span class="inningcounter">
+		<span class="arrow">&gt;</span><span class="inning">0</span>
+	</span>
+	<span class="pitchcounter">
+		<span class="white">P:</span>
+		<span class="pitchcount"></span>
+	</span>
 </div>`

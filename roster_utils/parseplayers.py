@@ -1,19 +1,19 @@
 import re, datetime
 
 name_formats = [
-	ur'^(?P<first>[A-Z])?(?P<middle>[A-Z]) (?P<last>[^ ]+)$',
-	ur'^(?P<first>[^ ])\. ?(?P<middle>[^ ])\. (?P<last>[^ ]+)$',
-	ur'^(?P<first>[^ ]+) (?P<last>[^ ]+)$',
-	ur'^(?P<first>[^ ]+) (?P<last>[^ ]+) (?P<suffix>[SJ]r)\.?$',
-	ur'^(?P<first>[^ ]+) (?P<last>[^ ]+) (?P<suffix>X?(V?I{1,3})|I[VX])$',
-	ur'^(?P<first>[^ ]+) (?P<middle>[^ ])\. (?P<last>[^ ]+)$',
-	ur'^(?P<first>[^ ]+) (?P<last>(De )?((Los|Las|La|Santa) )?[^ ]+)$',
-	ur'^(?P<first>[^ ]+) ?(?P<middle>[^ ]+) (?P<last>[^ ]+)$',
-	ur'^$',
+	r'^(?P<first>[A-Z])?(?P<middle>[A-Z]) (?P<last>[^ ]+)$',
+	r'^(?P<first>[^ ])\. ?(?P<middle>[^ ])\. (?P<last>[^ ]+)$',
+	r'^(?P<first>[^ ]+) (?P<last>[^ ]+)$',
+	r'^(?P<first>[^ ]+) (?P<last>[^ ]+) (?P<suffix>[SJ]r)\.?$',
+	r'^(?P<first>[^ ]+) (?P<last>[^ ]+) (?P<suffix>X?(V?I{1,3})|I[VX])$',
+	r'^(?P<first>[^ ]+) (?P<middle>[^ ])\. (?P<last>[^ ]+)$',
+	r'^(?P<first>[^ ]+) (?P<last>(De )?((Los|Las|La|Santa) )?[^ ]+)$',
+	r'^(?P<first>[^ ]+) ?(?P<middle>[^ ]+) (?P<last>[^ ]+)$',
+	r'^$',
 ]
 
 def clean(string, exotic=True):
-	if type(string) not in [str, unicode]:
+	if type(string) is not str:
 		return string
 	result = ''
 	for c in string:

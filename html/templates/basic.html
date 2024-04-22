@@ -17,18 +17,21 @@
 			$('#_scoreboard').html(scoreboard_html)
 			$('#_lineup').html(lineup_html)
 			$('#_diagram').html(diagram_html)
+			$('.inningcounter').hide()
+			$('.pitchcounter').hide()
 		})
 	</script>
 	<script type="text/javascript" src="../../scripts/strftime.js"></script>
 	<script type="text/javascript" src="../../scripts/roster.js"></script>
 	<script type="text/javascript" src="../../scripts/game.js"></script>
 	<script type="text/javascript" src="../../scripts/render.js"></script>
-	<script type="text/javascript" src="../../scripts/logos.js"></script>
+	<!-- <script type="text/javascript" src="../../scripts/logos.js"></script> -->
 </head>
 <body>
 
 	<script type="text/javascript" src="../components/scoreboard.html.js"></script>
 	<div id="_scoreboard"></div>
+	<!-- <svg height="222" width="200" id="_diagram"></svg> -->
 
 	<div>
 		<button id="fullscreen">Fullscreen</button>
@@ -36,13 +39,11 @@
 	</div>
 
 	<script type="text/javascript" src="../components/lineup.html.js"></script>
-	<div id="_lineup"></div>
+	<!-- <div id="_lineup"></div> -->
 
 	<script type="text/javascript" src="../components/diagram.html.js"></script>
-	<svg height="222" width="200" id="_diagram"></svg>
 	
 	<br>
-	<span class="yyyymmdd">00000000</span>_<span class="away_abbr">AWAY</span>_<span class="home_abbr">HOME</span>.baseball
 
 </body>
 </html>

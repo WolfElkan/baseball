@@ -66,6 +66,9 @@ function newGame() {
 	homein = false
 	inning = 1
 
+	jerseymode = false
+	jerseybuffer = ''
+
 	// for (var i = 0; i < lineup.away.length; i++) {
 	// 	lineup.away[i].reset()
 	// }
@@ -246,16 +249,38 @@ function new_pitcher() {
 }
 function next_pitcher() {
 	let ha = homein ? 'away' : 'home'
-	pitcher[ha]++
-	pitcher[ha] %= roster[ha].pitcher.length
-	let result = lineup[ha][0] = get_pitcher(ha)
-	$(`#${ha}_0_num`).val(result.jersey)
+	let nPitchers = roster[ha].pitcher.length
+	if (nPitchers) {
+		pitcher[ha]++
+		// if (roster[ha]) {
+		pitcher[ha] %= nPitchers
+		// }
+		let result = lineup[ha][0] = get_pitcher(ha)
+		$(`#${ha}_0_num`).val(result.jersey)
+	}
 	return result
 }
 KeyBindings['0'] = () => {
 	new_pitcher()
-	next_pitcher()
+
+	let ha = homein ? 'away' : 'home'
+	if (roster[ha].pitcher.length) {
+		next_pitcher()
+	}
+	
 	RENDER()
+}
+
+KeyBindings['['] = () => {
+	jerseymode = true
+}
+
+KeyBindings[']'] = () => {
+	player = new Player()
+	player.jersey = jerseybuffer
+	jerseybuffer = ''
+	bases[0] = player
+	jerseymode = false
 }
 
 function get_batter() {
@@ -334,24 +359,30 @@ function three_run_rule() {
 // Meta Functions
 
 function event(key) {
-	if ('AQWE'.includes(key)) {
-		error()
+	if (jerseymode && key != ']') {
+
+		jerseybuffer += key
+	
+	} else {
+		
+		if ('AQWE'.includes(key)) {
+			error()
+		}
+
+		key = key.toLowerCase()
+
+		if ('bsfph1234aj'.includes(key)) {
+			pitch()
+		}
+
+		if (key in KeyBindings) {
+			KeyBindings[key]()
+		}
+
+		if (!bases[0]) {
+			bases[0] = next_batter()
+		}
 	}
-
-	key = key.toLowerCase()
-
-	if ('bsfph1234aj'.includes(key)) {
-		pitch()
-	}
-
-	if (key in KeyBindings) {
-		KeyBindings[key]()
-	}
-
-	if (!bases[0]) {
-		bases[0] = next_batter()
-	}
-
 }
 
 function j(ha, order, jersey) {
