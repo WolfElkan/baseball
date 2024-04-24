@@ -15,7 +15,7 @@ text.away {
 
 text.BAL.home, polygon.BAL.away, circle.BAL.away {fill: #fd4b01}
 text.BOS.home, polygon.BOS.away, circle.BOS.away {fill: #c7112f}
-text.NYY.home, polygon.NYY.away, circle.NYY.away {fill: #e40227}
+/*text.NYY.home, polygon.NYY.away, circle.NYY.away {fill: #e40227}*/
 text.TBR.home, polygon.TBR.away, circle.TBR.away {fill: #001a4d}
 text.TOR.home, polygon.TOR.away, circle.TOR.away {fill: #0c488e}
 text.CWS.home, polygon.CWS.away, circle.CWS.away {fill: #000000}
@@ -115,4 +115,22 @@ text.SEA.home {
 polygon.SEA.home, circle.SEA.home {
 	fill: #1dd;
 } 
+
+
+text.OAK.away {
+	fill: #003831;
+	stroke: #f0b31f;
+	stroke-width: 0.5px;
+}
+polygon.OAK.away, circle.OAK.away {
+	fill: #bbb;
+} 
+text.NYY.home {
+	fill: #0c1f47;
+	/*stroke: white;*/
+}
+polygon.NYY.home, circle.NYY.home {
+	fill: white;
+} 
+
 
